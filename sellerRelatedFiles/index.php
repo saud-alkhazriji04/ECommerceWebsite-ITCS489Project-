@@ -46,7 +46,7 @@
 
 require '../getProductImage.php'; // contains getProductImageSrc()
 
-$productID = 3;
+$productID = 21;
 $imageSrc = getProductImageSrc($productID);
 
 if ($imageSrc) {

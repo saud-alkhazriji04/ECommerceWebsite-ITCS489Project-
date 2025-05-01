@@ -1,0 +1,56 @@
+/* styles.css */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; color: #333; background: #f9f9f9; }
+
+.header {
+  display: flex; justify-content: space-between;
+  padding: 1rem; background: #fff; border-bottom: 1px solid #ddd;
+}
+.logo { font-size: 1.5rem; font-weight: bold; }
+.logout-btn {
+  background: #444; color: #fff; border: none; padding: .5rem 1rem; border-radius: 20px;
+}
+
+.container { display: flex; min-height: 100vh; }
+.sidebar {
+  width: 200px; background: #fff; border-right: 1px solid #ddd;
+  display: flex; flex-direction: column; padding: 1rem 0;
+}
+.sidebar a {
+  padding: .75rem 1rem; text-decoration: none; color: #333; display: flex; align-items: center;
+}
+.sidebar a.active { background: #ffe5d0; border-left: 4px solid #f57c00; }
+.sidebar a span { margin-right: .5rem; }
+
+.main {
+  flex: 1; padding: 2rem; background: #f9f9f9;
+}
+.message { margin-bottom: 1rem; color: green; }
+
+form h2 { margin-bottom: 0.5rem; }
+.image-grid { display: flex; gap: 1rem; margin-bottom: 1.5rem; margin-top: .25rem;}
+.upload-box {
+  position: relative; width: 100px; height: 100px;
+  border: 2px dashed #ccc; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; background: #fff; overflow: hidden;
+}
+.upload-box input { position: absolute; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.upload-box .placeholder { font-size: 0.9rem; color: #888; }
+.upload-box .preview {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: none;
+}
+
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: .25rem; font-weight: 500; }
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%; padding: .5rem; border: 1px solid #ccc; border-radius: 4px;
+}
+.row { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+.small { flex: 1; min-width: 100px; }
+
+.add-btn {
+  background: #f57c00; color: #fff; border: none; padding: .75rem 2rem;
+  font-size: 1rem; border-radius: 4px; cursor: pointer;
+}
