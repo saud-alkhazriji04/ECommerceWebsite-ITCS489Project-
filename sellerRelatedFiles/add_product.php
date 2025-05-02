@@ -66,9 +66,9 @@
 
   <div class="container">
     <aside class="sidebar">
-      <a href="#" class="active"><span>➕</span> Add Product</a>
-      <a href="#"><span>📋</span> Product List</a>
-      <a href="#"><span>✅</span> Orders</a>
+      <a href="add_product.php" class="active"><span>➕</span> Add Product</a>
+      <a href="product_list_page.php"><span>📋</span> Product List</a>
+      <a href="orders_page.php"><span>✅</span> Orders</a>
     </aside>
 
     <main class="main">

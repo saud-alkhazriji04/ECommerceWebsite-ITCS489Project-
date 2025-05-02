@@ -16,4 +16,18 @@
         }
     }
 
+    function get_categoryName_from_categoryID($categoryID) {
+        global $pdo;
+
+        $sql = "SELECT * FROM category WHERE categoryID = :categoryID";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(['categoryID' => $categoryID]);
+        $row = $stmt->fetch();
+        if ($row) {
+            return $row -> categoryName;
+        } else {
+            // do some error
+        }
+    }
+
 ?>
