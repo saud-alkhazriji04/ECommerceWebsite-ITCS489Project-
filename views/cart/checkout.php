@@ -1,6 +1,6 @@
 <?php
-require_once 'database.php';
-require_once 'models/ProductModel.php';
+require_once '../database.php';
+require_once '../models/ProductModel.php';
 
 $productModel = new ProductModel($pdo);
 $cart = $_SESSION['cart'] ?? [];
