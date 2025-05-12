@@ -1,9 +1,22 @@
 <?php
-// Placeholder script for image rendering
-if (isset($_GET['id'])) {
-    // This is a mockup, in real usage you would fetch and echo image binary from DB
-    header("Content-Type: image/jpeg");
-    readfile("placeholder.jpg"); // Ensure this file exists or replace logic accordingly
-    exit;
+function getProductImageSrc($productID) {
+    require 'database.php'; 
+
+    try {
+        $pdo = new PDO($dsn, $db_user, $db_password, $PDOoptions);
+
+        $sql = "SELECT imageFilename FROM product WHERE productID = :id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(['id' => $productID]);
+        $row = $stmt->fetch();
+        
+        if (!empty($row->imageFilename)) {
+            return "/eComWebSite/uploads/" . htmlspecialchars($row->imageFilename, ENT_QUOTES);
+        } else {
+            return null;
+        }
+    } catch (PDOException $e) {
+        return null;
+    }
 }
 ?>
