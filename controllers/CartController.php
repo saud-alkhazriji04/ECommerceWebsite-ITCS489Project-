@@ -1,6 +1,6 @@
 <?php
 require_once '../models/ProductModel.php';
-require_once '../Database.php';
+require_once '../database.php';
 
 class CartController {
     public function add() {
