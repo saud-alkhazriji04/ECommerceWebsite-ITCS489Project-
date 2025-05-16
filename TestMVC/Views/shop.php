@@ -5,11 +5,11 @@
   <div class="slides">
     <div class="slide">
       <div class="slide-content">
-        <h2>Next‑Level Gaming Headphones</h2>
+        <h2>IPhone 16 - Hello Apple Intelligence</h2>
         <p>Hurry up—only a few left!</p>
-        <a href="#" class="btn">Shop Now</a>
+        <a href="product/45" class="btn">Shop Now</a>
       </div>
-      <img src="assets/headphones.png" alt="Headphones">
+      <img src="/eComWebSite/uploads/image.png" alt="iphone">
     </div>
     <!-- more .slide divs as needed -->
   </div>
@@ -41,7 +41,7 @@
             href="/eComWebSite/TestMVC/Public/product/<?= $p['productID'] ?>" 
             class="btn-buy"
         >
-            Buy now
+            Shop
         </a>
 
     </div>

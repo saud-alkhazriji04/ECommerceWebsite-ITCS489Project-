@@ -39,6 +39,7 @@ function add_Product_image($productName, $productDescription, $categoryID, $pric
 
         if (! move_uploaded_file($tmpName, $uploadDir . $newName)) {
             throw new Exception('Failed to move uploaded file.');
+            die();
         }
 
         // 3) Update the database with the new filename

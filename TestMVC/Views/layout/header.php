@@ -80,9 +80,9 @@ $baseURL = '/eComWebSite/TestMVC/Public';
   <header>
     <h1>QuickCart</h1>
     <nav>
-      <a href="products">Home</a>
-      <a href="products">Shop</a>
-      <a href="login">Login</a>
+      <a href="/eComWebSite/TestMVC/Public/products">Home</a>
+      <a href="/eComWebSite/TestMVC/Public/cart">My Cart</a>
+      <a href="/eComWebSite/TestMVC/Public/login">Login</a>
     </nav>
   </header>
   <main>

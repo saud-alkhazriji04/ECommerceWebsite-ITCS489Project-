@@ -30,11 +30,11 @@
 <div class="product-detail container">
   <div class="gallery">
     <div class="main-img">
-      <img src="assets/<?= htmlspecialchars($product['imageFilename']) ?>" alt="<?= htmlspecialchars($product['productName']) ?>">
+      <img src="/eComWebSite/uploads/<?= htmlspecialchars($product['imageFilename']) ?>" alt="<?= htmlspecialchars($product['productName']) ?>">
     </div>
-    <div class="thumbs">
-      <img src="assets/<?= htmlspecialchars($product['imageFilename']) ?>" alt="">
-    </div>
+    <!-- <div class="thumbs">
+      <img src="/eComWebSite/uploads/<?= htmlspecialchars($product['imageFilename']) ?>" alt="">
+    </div> -->
   </div>
 
   <div class="info">
@@ -64,7 +64,7 @@
 <div class="product-grid">
   <?php foreach ($related as $p): ?>
     <div class="product-card">
-      <img src="assets/<?= htmlspecialchars($p['imageFilename']) ?>" alt="<?= htmlspecialchars($p['productName']) ?>">
+      <img src="/eComWebSite/uploads/<?= htmlspecialchars($p['imageFilename']) ?>" alt="<?= htmlspecialchars($p['productName']) ?>">
       <h3><?= htmlspecialchars($p['productName']) ?></h3>
       <div class="price">$<?= number_format($p['price'],2) ?></div>
       <a href="/eComWebSite/TestMVC/Public/product/<?= $p['productID'] ?>" class="btn-buy">Buy now</a>
