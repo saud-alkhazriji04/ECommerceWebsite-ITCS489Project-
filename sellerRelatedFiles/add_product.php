@@ -57,6 +57,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>eCommerce - Add Product</title>
   <link rel="stylesheet" href="\eComWebSite\sellerRelatedFiles/style/seller_page_styles.css"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #f9f9f9; color: #333; }
+    header { display: flex; justify-content: space-between; align-items: center;
+                padding: 1rem; background: #fff; border-bottom: 1px solid #ddd; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #f57c00; }
+    .logout-btn { background: #444; color: #fff; border: none; padding: .5rem 1rem;
+                    border-radius: 20px; cursor: pointer; }
+    .container { display: flex; min-height: 100vh; }
+    aside { width: 200px; background: #fff; border-right: 1px solid #ddd; }
+    aside nav a { display: flex; align-items: center; padding: .75rem 1rem;
+                    text-decoration: none; color: #333; transition: background .2s; }
+    aside nav a.active, aside nav a:hover { background: #ffe5d0; color: #f57c00; }
+    aside nav a span { margin-right: .5rem; font-size: 1.2rem; }
+    main { flex: 1; padding: 2rem; }
+
+    .orders-list { list-style: none; }
+    .order-item { display: flex; justify-content: space-between; background: #fff;
+                    padding: 1rem; margin-bottom: .5rem; border-radius: 4px;
+                    border: 1px solid #eee; }
+    .order-detail { display: flex; }
+    .order-icon { font-size: 2rem; color: #f57c00; margin-right: 1rem; }
+    .order-info { display: flex; flex-direction: column; justify-content: space-between; }
+    .products { font-weight: 500; }
+    .meta { font-size: .9rem; color: #666; line-height: 1.4; }
+    .right-info { text-align: right; display: flex; flex-direction: column;
+                    justify-content: space-between; }
+    .amount { font-weight: bold; }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -66,12 +95,19 @@
 
   <div class="container">
     <aside class="sidebar">
-      <a href="add_product.php" class="active"><span>➕</span> Add Product</a>
+      <!-- <a href="add_product.php" class="active"><span>➕</span> Add Product</a>
       <a href="product_list_page.php"><span>📋</span> Product List</a>
       <a href="orders_page.php"><span>✅</span> Orders</a>
+      <a href="dashboard.php"><span>📊</span> DashBoard</a> -->
+      <nav>
+        <a href="add_product.php" class="active"><span>➕</span> Add Product</a>
+        <a href="product_list_page.php"><span>📋</span> Product List</a>
+        <a href="orders_page.php"><span>✅</span> Orders</a>
+        <a href="dashboard.php"><span>📊</span> DashBoard</a>
+      </nav>
     </aside>
 
-    <main class="main">
+    <main>
       <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" enctype="multipart/form-data" id="product-form">
         <h2>Add New Product</h2> 
         <label for="images0">Product Image</label>
@@ -123,6 +159,7 @@
         <button type="submit" class="add-btn">Add Product</button>
       </form>
     </main>
+
   </div>
 
   <script src="add_product_script.js"></script>

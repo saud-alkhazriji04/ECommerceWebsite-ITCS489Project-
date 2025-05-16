@@ -40,7 +40,38 @@ foreach ($queries as $key => $sql) {
   <title>Sales Dashboard</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
+
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #f9f9f9; color: #333; }
+    header { display: flex; justify-content: space-between; align-items: center;
+             padding: 1rem; background: #fff; border-bottom: 1px solid #ddd; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #f57c00; }
+    .logout-btn { background: #444; color: #fff; border: none; padding: .5rem 1rem;
+                  border-radius: 20px; cursor: pointer; }
+    .container { display: flex; min-height: 100vh; }
+    aside { width: 200px; background: #fff; border-right: 1px solid #ddd; }
+    aside nav a { display: flex; align-items: center; padding: .75rem 1rem;
+                 text-decoration: none; color: #333; transition: background .2s; }
+    aside nav a.active, aside nav a:hover { background: #ffe5d0; color: #f57c00; }
+    aside nav a span { margin-right: .5rem; font-size: 1.2rem; }
+    main { flex: 1; padding: 2rem; }
+
+    .orders-list { list-style: none; }
+    .order-item { display: flex; justify-content: space-between; background: #fff;
+                  padding: 1rem; margin-bottom: .5rem; border-radius: 4px;
+                  border: 1px solid #eee; }
+    .order-detail { display: flex; }
+    .order-icon { font-size: 2rem; color: #f57c00; margin-right: 1rem; }
+    .order-info { display: flex; flex-direction: column; justify-content: space-between; }
+    .products { font-weight: 500; }
+    .meta { font-size: .9rem; color: #666; line-height: 1.4; }
+    .right-info { text-align: right; display: flex; flex-direction: column;
+                  justify-content: space-between; }
+    .amount { font-weight: bold; }
+
+
+    body { font-family: Arial, sans-serif; }
     .card { display: inline-block; width: 30%; margin-right: 2%; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
     .card h3 { margin: 0 0 10px; }
     #chartContainer { width: 100%; max-width: 600px; margin-top: 40px; }
@@ -48,26 +79,46 @@ foreach ($queries as $key => $sql) {
   </style>
 </head>
 <body>
-  <h1>Sales Dashboard</h1>
+  <header>
+    <div class="logo">eCommerce - Seller Page</div>
+    <button class="logout-btn" onclick="location.href='logout.php'">Logout</button>
+  </header>
 
-  <div class="card">
-    <h3>Today</h3>
-    <p style="font-size: 24px;">$<?php echo number_format($totals['daily'],2); ?></p>
-  </div>
-  <div class="card">
-    <h3>This Month</h3>
-    <p style="font-size: 24px;">$<?php echo number_format($totals['monthly'],2); ?></p>
-  </div>
-  <div class="card">
-    <h3>This Year</h3>
-    <p style="font-size: 24px;">$<?php echo number_format($totals['yearly'],2); ?></p>
+  <div class="container">
+
+    <aside>
+      <nav>
+        <a href="add_product.php"><span>➕</span> Add Product</a>
+        <a href="product_list_page.php"><span>📋</span> Product List</a>
+        <a href="orders_page.php"><span>✅</span> Orders</a>
+        <a href="dashboard.php" class="active"><span>📊</span> DashBoard</a>
+      </nav>
+    </aside>
+
+    <main>
+      <h1>Sales Dashboard</h1>
+      <div class="card">
+        <h3>Today</h3>
+        <p style="font-size: 24px;">$<?php echo number_format($totals['daily'],2); ?></p>
+      </div>
+      <div class="card">
+        <h3>This Month</h3>
+        <p style="font-size: 24px;">$<?php echo number_format($totals['monthly'],2); ?></p>
+      </div>
+      <div class="card">
+        <h3>This Year</h3>
+        <p style="font-size: 24px;">$<?php echo number_format($totals['yearly'],2); ?></p>
+      </div>
+    
+      <div id="chartContainer">
+        <canvas id="salesChart"></canvas>
+      </div>
+    
+      <button id="printReport">Print Sales Report</button>
+    </main>
+
   </div>
 
-  <div id="chartContainer">
-    <canvas id="salesChart"></canvas>
-  </div>
-
-  <button id="printReport">Print Sales Report</button>
 
   <script>
     // Chart.js bar chart for daily, monthly, yearly totals

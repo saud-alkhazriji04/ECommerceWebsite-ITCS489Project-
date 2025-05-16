@@ -31,6 +31,7 @@ $products = $stmt->fetchAll();
         <a href="add_product.php"><span>➕</span> Add Product</a>
         <a href="product_list_page.php" class="active"><span>📋</span> Product List</a>
         <a href="orders_page.php"><span>✅</span> Orders</a>
+        <a href="dashboard.php"><span>📊</span> DashBoard</a>
       </nav>
     </aside>
 

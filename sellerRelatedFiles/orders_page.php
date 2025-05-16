@@ -72,7 +72,8 @@ $orders = $stmt->fetchAll(PDO::FETCH_OBJ);
       <nav>
         <a href="add_product.php"><span>➕</span> Add Product</a>
         <a href="product_list_page.php"><span>📋</span> Product List</a>
-        <a href="orders.php" class="active"><span>✅</span> Orders</a>
+        <a href="orders_page.php" class="active"><span>✅</span> Orders</a>
+        <a href="dashboard.php"><span>📊</span> DashBoard</a>
       </nav>
     </aside>
 
