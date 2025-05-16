@@ -6,7 +6,9 @@ class OrderController {
     public function place() {
         // 1) Ensure user is logged in and cart not empty
         if (empty($_SESSION['user']) || empty($_SESSION['cart'])) {
-            header('Location: /kaka'); exit;
+            if (empty($_SESSION['user'])) header('Location: /eComWebSite/TestMVC/Public/login'); 
+            // if (empty($_SESSION['cart'])) echo "<p>cart is empty</p>";
+            exit;
         }
         $customerID = $_SESSION['user']['customerID'];
         $items      = $_SESSION['cart'];
