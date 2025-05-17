@@ -70,6 +70,17 @@ $products = $stmt->fetchAll();
                   <path d="M5 11v8a2 2 0 002 2h8" stroke="#fff" stroke-width="2"/>
                 </svg>
               </button>
+
+              <button
+                class="delete-btn"
+                onclick="deleteProduct(<?= $prod->productID ?>)"
+              >
+                Delete 🗑️
+              </button>
+
+              <button class="edit-btn" onclick="editProduct(<?= $prod->productID ?>)">
+                Edit ✏️
+              </button>
             </td>
           </tr>
         <?php endforeach; ?>
@@ -81,7 +92,14 @@ $products = $stmt->fetchAll();
   <script>
     function viewProduct(id) {
       // Redirect to product detail or seller edit page
+      window.location.href = '/eComWebSite/TestMVC/Public/product/' + id;
+    }
+    function editProduct(id) {
       window.location.href = 'edit_product.php?id=' + id;
+    }
+    function deleteProduct(id) {
+      if (!confirm('Are you sure you want to delete this product?')) return;
+      window.location.href = 'delete_product.php?id=' + id;
     }
   </script>
 </body>

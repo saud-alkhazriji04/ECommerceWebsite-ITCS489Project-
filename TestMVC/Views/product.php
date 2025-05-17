@@ -24,6 +24,10 @@
 #flashMessage.hide {
   opacity: 0;
 }
+.main-img {display: flex; justify-content: center;}
+img {
+  max-width: 400px;
+}
 </style>
 
 
