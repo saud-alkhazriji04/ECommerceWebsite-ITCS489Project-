@@ -82,7 +82,14 @@ $baseURL = '/eComWebSite/TestMVC/Public';
     <nav>
       <a href="/eComWebSite/TestMVC/Public/products">Home</a>
       <a href="/eComWebSite/TestMVC/Public/cart">My Cart</a>
-      <a href="/eComWebSite/TestMVC/Public/login">Login</a>
+      <a href="/eComWebSite/TestMVC/Public/orders">My Orders</a>
+      <?php if (!empty($_SESSION['user'])): ?>
+        <!-- User is logged in: show Logout -->
+        <a href="<?= $baseURL ?>/logout">Logout</a>
+      <?php else: ?>
+        <!-- Not logged in: show Login -->
+        <a href="<?= $baseURL ?>/login">Login</a>
+      <?php endif; ?>
     </nav>
   </header>
   <main>

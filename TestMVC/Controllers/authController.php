@@ -18,6 +18,17 @@ class AuthController {
         require '../Views/login.php';
     }
 
+    public function logout() {
+        session_start();
+        // clear the user session
+        unset($_SESSION['user']);
+        // (optionally) destroy the entire session:
+        // session_destroy();
+        // redirect back to shop or home
+        header("Location: products");
+        exit;
+    }
+
     // public function register() {
     //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //         $customer = new Customer();

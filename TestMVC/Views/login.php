@@ -82,6 +82,22 @@
     }
     .auth-card button:hover { background:#e65500; }
 
+    /* ===== Guest link styling ===== */
+    .auth-guest {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    .guest-link {
+      color: #ff6600;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .guest-link:hover {
+      text-decoration: underline;
+      color: #e65500;
+    }
+
+
     /* Switch link */
     .switch {
       text-align:center; margin-top:1rem;
@@ -112,6 +128,12 @@
         </div>
         <button type="submit">Log in</button>
       </form>
+
+      <!-- Continue as guest -->
+      <div class="auth-guest">
+        <a href="products" class="guest-link">Continue as Guest</a>
+      </div>
+
       <div class="switch">
         Don’t have an account? <a href="register">Register</a>.
       </div>

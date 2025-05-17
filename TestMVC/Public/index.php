@@ -176,6 +176,16 @@ switch (true) {
         (new CartController())->update($m[1], $m[2]);
         break;
 
+    case $uri === '/orders':
+        require __DIR__ . '/../controllers/OrdersController.php';
+        (new OrdersController())->index();
+        break;
+
+    case $uri === '/logout':
+        require __DIR__ . '/../controllers/AuthController.php';
+        (new AuthController())->logout();
+        break;
+
     default:
         http_response_code(404);
         echo "404 Not Found";

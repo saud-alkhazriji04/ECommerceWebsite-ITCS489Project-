@@ -15,4 +15,16 @@ class Order extends Model {
     $stmt->execute([$id]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
+
+  // Return all orders for a given customerID
+  public function getByCustomer($customerID) {
+      $stmt = $this->db->prepare("
+        SELECT * 
+        FROM `Order` 
+        WHERE customerID = ? 
+        ORDER BY orderDate DESC
+      ");
+      $stmt->execute([$customerID]);
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
 }

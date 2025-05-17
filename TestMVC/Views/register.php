@@ -123,6 +123,22 @@
     }
     .auth-card button:hover { background:#e65500; }
 
+    /* ===== Guest link styling (same as switch) ===== */
+    .auth-guest {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    .guest-link {
+      color: #ff6600;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .guest-link:hover {
+      text-decoration: underline;
+      color: #e65500;
+    }
+
+
     /* Switch link */
     .switch {
       text-align:center; margin-top:1rem;
@@ -158,10 +174,10 @@
           <input id="password" name="password" type="password" placeholder="Enter your password" required>
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="password2">Repeat Password</label>
           <input id="password2" name="password2" type="password" placeholder="Repeat your password" required>
-        </div>
+        </div> -->
 
         <div class="form-group">
           <label for="phoneNumber">Phone Number</label>
@@ -190,6 +206,11 @@
 
         <button type="submit">Register</button>
       </form>
+
+      <div class="auth-guest">
+        <a href="products" class="guest-link">Continue as Guest</a>
+      </div>
+
       <div class="switch">
         Already have an account? <a href="login">Log in</a>.
       </div>

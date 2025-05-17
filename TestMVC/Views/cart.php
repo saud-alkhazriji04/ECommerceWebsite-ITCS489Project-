@@ -21,7 +21,7 @@ $count  = array_sum(array_column($items, 'quantity'));
         <?php foreach($items as $i): ?>
           <tr>
             <td class="prod-info">
-              <img src="assets/<?= htmlspecialchars($i['image']) ?>" alt="">
+              <img src="/eComWebSite/uploads/<?= htmlspecialchars($i['image']) ?>" alt="">
               <div>
                 <strong><?= htmlspecialchars($i['name']) ?></strong><br>
                 <!-- <a href="/cart/remove/<?= $i['productID'] ?>">Remove</a> -->
@@ -69,9 +69,9 @@ $count  = array_sum(array_column($items, 'quantity'));
       <!-- Place Order form -->
         <form action="order/place" method="POST" style="display:inline">
             <button type="submit" class="btn-place">
-              
+              Place Order
             </button>
-            <a href="eComWebSite/TestMVC/Public/cart/order/place" >Place Order</a>
+            <!-- <a href="eComWebSite/TestMVC/Public/cart/order/place" >Place Order</a> -->
         </form>
     </aside>
   </div>
